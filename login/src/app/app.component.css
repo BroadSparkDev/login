@@ -1,0 +1,111 @@
+.help-block {
+    color: red
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.socialButton {
+    width: 300px;
+    height: 30px;
+    display: block;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    line-height: 30px;
+    outline: none !important;
+    //border-radius:3px;
+
+}
+.socialButton:first-of-type {
+    margin-top: 30px;
+}
+.socialButton.facebook {
+    color: #3b5998;
+    box-shadow: 0 0 0 1px #3b5998;
+}
+.socialButton.twitter {
+    color: #00a0d1;
+    box-shadow: 0 0 0 1px #00a0d1;
+}
+.socialButton.googleplus {
+    color: #db4a39;
+    box-shadow: 0 0 0 1px #db4a39;
+}
+.socialButton.facebook:hover {
+    background: #3b5998;
+    color: #fff;
+}
+.socialButton.twitter:hover {
+    background: #00a0d1;
+    color: #fff;
+}
+.socialButton.googleplus:hover {
+    background: #db4a39;
+    color: #fff;
+}
+/*--process cssses--*/
+
+.loginOrSignupField.signup_ON {
+    box-shadow: 0 0 0 2px #2ecc71;
+}
+.signup_ON .switchButtonOuter {
+    box-shadow: 0 0 0 2px #2ecc71;
+    background: #2ecc1;
+}
+.signup_ON .switchButtonInner {
+    left: 50%;
+}
+.signup_ON .switchButtonOuter:before {
+    color: #ddd;
+}
+.signup_ON .switchButtonOuter:after {
+    color: #2ecc71;
+}
+.signup_ON #email,
+.signup_ON #password,
+.signup_ON #submit {
+    box-shadow: 0 0 0 1px #2ecc71;
+}
+.signup_ON #email,
+.signup_ON #password {
+    background: #fff;
+    color: #2ecc71;
+}
+.signup_ON #email:hover,
+.signup_ON #password:hover,
+.signup_ON #email:focus,
+.signup_ON #password:focus,
+.inputWarn {
+    box-shadow: 0 0 0 1px #ff726b;
+    color: #ff726b;
+}
+.signup_ON #submit {
+    background: #2ecc71;
+}
+.signup_ON ::-webkit-input-placeholder {
+    color: #2ecc71;
+}
+.signup_ON :-moz-placeholder {
+    color: #2ecc71;
+}
+.signup_ON ::-moz-placeholder {
+    color: #2ecc71;
+}
+.signup_ON :-ms-input-placeholder {
+    color: #2ecc71;
+}
+/*--usable place end--*/
+
+
+
+
+
+
+
+
+
+
+

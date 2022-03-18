@@ -1,0 +1,70 @@
+<section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <h3 class="mb-5">Sign in</h3>
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <div class="mb-4" *ngIf="!isForgotPassword">
+                                <div class="form-outline mb-4">
+                                    <input formControlName="username" type="email" placeholder="Username" id="typeEmailX-2" class="form-control form-control-lg" />
+                                    <span *ngIf="loginForm.get('username').errors && loginForm.get('username').errors['required'] && loginForm.get('username').touched" class="help-block">
+                                        Username cannot be empty
+                                    </span>
+                                    <span *ngIf="loginForm.get('username').errors && loginForm.get('username').errors['email'] && loginForm.get('username').touched" class="help-block">
+                                        Please enter a valid Username
+                                    </span>
+                                    <span *ngIf="loginForm.get('username').errors && loginForm.get('username').errors['pattern'] && loginForm.get('username').touched" class="help-block">
+                                        No special characters allowed except @.-_
+                                    </span>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input formControlName="password" type="password" placeholder="Password" id="typePasswordX-2" class="form-control form-control-lg" />
+                                    <span *ngIf="loginForm.get('password').errors && loginForm.get('password').errors['required'] && loginForm.get('password').touched" class="help-block">
+                                        Please enter a password
+                                    </span>
+                                    <span *ngIf="loginForm.get('password').errors && loginForm.get('password').errors['minlength'] && loginForm.get('password').touched" class="help-block">
+                                        Password cannot be less than 8 characters
+                                    </span>
+                                    <!-- <label class="form-label" for="typePasswordX-2">Password</label> -->
+                                </div>
+                                <span *ngIf="loginForm.errors && loginForm.errors['invalidCreds']" class="help-block">
+                                    Username/Password details are not valid, Please try again.
+                                </span>
+                            </div>
+                            <div class="mb-4" *ngIf="isForgotPassword">
+                                <div class="form-outline mb-4">
+                                    <input formControlName="username" type="email" placeholder="Username" id="typeEmailX-2" class="form-control form-control-lg" />
+                                    <span *ngIf="loginForm.get('username').errors && loginForm.get('username').errors['required'] && loginForm.get('username').touched" class="help-block">
+                                        Username cannot be empty
+                                    </span>
+                                    <span *ngIf="loginForm.get('username').errors && loginForm.get('username').errors['email'] && loginForm.get('username').touched" class="help-block">
+                                        Please enter a valid Username
+                                    </span>
+                                    <span *ngIf="loginForm.get('username').errors && loginForm.get('username').errors['pattern'] && loginForm.get('username').touched" class="help-block">
+                                        No special characters allowed except @.-_
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary btn-lg btn-block" type="submit" *ngIf="!isForgotPassword">Login</button>
+                            <button class="btn btn-primary btn-lg btn-block" (click)="redirectToChangePassword()"  *ngIf="isForgotPassword">Submit</button>
+                            <button class="btn btn-secondary btn-lg btn-block" type="submit" *ngIf="isForgotPassword" (click)="toggleForgotPassword()" >Cancel</button>
+
+                            <a (click)="toggleForgotPassword()" href="javascript:void(0)" *ngIf="!isForgotPassword">ForgotPassword?</a>
+                        </form>
+
+                        <form action="http://65.1.155.215:3001/auth/google" method="GET">
+                            <button class="btn btn-primary btn-lg btn-block" *ngIf="!isForgotPassword" type="submit">Google</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
